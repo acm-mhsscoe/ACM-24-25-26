@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
       <body className="antialiased bg-background text-foreground">
         <AppProviders>
           <AppBackground />
+
           <div className="flex overflow-hidden relative flex-col min-h-screen">
             <AppNavbar />
             <main className="flex-grow mx-auto w-full max-w-[2000px] px-4 sm:px-6 lg:px-8 py-6 min-h-[calc(100vh-64px-40px)]">
