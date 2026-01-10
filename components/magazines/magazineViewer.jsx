@@ -75,7 +75,7 @@ const MagazineViewer = ({ magazine }) => {
             onClick={() => router.back()}
             icon={<ArrowLeftOutlined />}
             type="primary"
-            className="!rounded-full"
+            className="!rounded-full bg-blue-500"
           >
             Back
           </Button>
@@ -94,7 +94,7 @@ const MagazineViewer = ({ magazine }) => {
                 isFullscreen ? <FullscreenExitOutlined /> : <FullscreenOutlined />
               }
               type="primary"
-              className="!rounded-full"
+              className="!rounded-full bg-blue-500"
             >
               {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
             </Button>
@@ -154,7 +154,7 @@ const MagazineViewer = ({ magazine }) => {
           disabled={currPage === 1}
           type="primary"
           size="large"
-          className="!fixed left-8 top-1/2 -translate-y-1/2 !w-12 !h-12 !rounded-full !flex !items-center !justify-center hover:!scale-110 transition-transform z-50"
+          className="!fixed left-8 top-1/2 -translate-y-1/2 !w-12 !h-12 !rounded-full bg-blue-500 !flex !items-center !justify-center hover:!scale-110 transition-transform z-50"
         />
         <Button
           onClick={nextPage}
