@@ -105,7 +105,7 @@ const MagazineDisplay = ({ magazines }) => {
         <Button
           className="!absolute right-5 top-1/2 -translate-y-1/2 z-[3] !w-12 !h-12 !rounded-full !flex !items-center !justify-center hover:!scale-110 transition-transform"
           onClick={() => imgStackRef.current?.goNext()}
-          icon={<ChevronRight size={24} className="text-blue-600 bg-blue-500" />}
+          icon={<ChevronRight size={24} className="text-blue-600 " />}
           type="text"
         />
       </div>

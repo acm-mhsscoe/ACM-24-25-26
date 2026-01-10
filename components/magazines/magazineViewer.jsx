@@ -162,7 +162,7 @@ const MagazineViewer = ({ magazine }) => {
           disabled={currPage >= magazine.pages.length}
           type="primary"
           size="large"
-          className="!fixed right-8 top-1/2 -translate-y-1/2 !w-12 !h-12 !rounded-full !flex !items-center !justify-center hover:!scale-110 transition-transform z-50"
+          className="!fixed right-8 top-1/2 -translate-y-1/2 bg-blue-500 !w-12 !h-12 !rounded-full !flex !items-center !justify-center hover:!scale-110 transition-transform z-50"
         />
       </div>
     </div>
