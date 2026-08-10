@@ -40,6 +40,7 @@ const EventHeader = ({ title, description, poster }) => {
               width={800}
               height={1000}
               priority
+              unoptimized
             />
           </div>
         </div>

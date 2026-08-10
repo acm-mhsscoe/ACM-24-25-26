@@ -71,13 +71,7 @@ const AppFooter = () => {
                   key={`footer_useful_link_${index}`}
                   className="transition-colors duration-200 hover:text-[#007bff] w-fit"
                 >
-                  <Link
-                    href={href || "#"}
-                    prefetch={false}
-                    className="inline-flex items-center gap-1.5 hover:gap-2 transition-all duration-200"
-                  >
-                    {label}
-                  </Link>
+                  {label}
                 </li>
               ))}
             </ul>
