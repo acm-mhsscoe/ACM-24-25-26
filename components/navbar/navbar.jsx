@@ -10,6 +10,7 @@ import {
   Users,
   BookOpen,
   Image as ImageIcon,
+  Rocket,
 } from "lucide-react";
 import NavbarDesktopAccount from "./desktopAccount";
 import NavbarMobileView from "./mobileView";
@@ -59,26 +60,28 @@ const AppNavbar = () => {
         }`}
       >
         <div className="container px-4 mx-auto max-w-7xl">
-          <div className="flex justify-between items-center h-16">
+          <div className="relative flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0">
-              <Image
-                src="/logo.png"
-                alt="ACM MHSSCOE"
-                width={48}
-                height={48}
-                className="object-contain w-12 h-12"
-                priority
-              />
-            </Link>
+            <div className="flex items-center flex-1 justify-start">
+              <Link href="/" className="flex-shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="ACM MHSSCOE"
+                  width={48}
+                  height={48}
+                  className="object-contain w-12 h-12"
+                  priority
+                />
+              </Link>
+            </div>
 
-            {/* Desktop Navigation Links */}
-            <div className="hidden md:flex md:items-center md:gap-2">
+            {/* Desktop Navigation Links - Centered */}
+            <div className="hidden md:flex md:items-center md:gap-1 lg:gap-2 absolute left-1/2 -translate-x-1/2">
               <Link
                 href="/"
-                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all rounded-lg ${
+                className={`flex items-center gap-1.5 px-3 lg:px-4 py-2 text-sm font-medium transition-all rounded-lg ${
                   pathname === "/"
-                    ? "text-blue-600 bg-blue-50"
+                    ? "text-blue-600 bg-blue-50 font-semibold"
                     : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
                 }`}
               >
@@ -87,9 +90,9 @@ const AppNavbar = () => {
               </Link>
               <Link
                 href="/events"
-                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all rounded-lg ${
+                className={`flex items-center gap-1.5 px-3 lg:px-4 py-2 text-sm font-medium transition-all rounded-lg ${
                   pathname === "/events"
-                    ? "text-blue-600 bg-blue-50"
+                    ? "text-blue-600 bg-blue-50 font-semibold"
                     : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
                 }`}
               >
@@ -97,10 +100,21 @@ const AppNavbar = () => {
                 <span>Events</span>
               </Link>
               <Link
+                href="/sih"
+                className={`flex items-center gap-1.5 px-3 lg:px-4 py-2 text-sm font-medium transition-all rounded-lg ${
+                  pathname === "/sih"
+                    ? "text-blue-600 bg-blue-50 font-semibold"
+                    : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+                }`}
+              >
+                <Rocket size={18} />
+                <span>SIH</span>
+              </Link>
+              <Link
                 href="/teams"
-                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all rounded-lg ${
+                className={`flex items-center gap-1.5 px-3 lg:px-4 py-2 text-sm font-medium transition-all rounded-lg ${
                   pathname === "/teams"
-                    ? "text-blue-600 bg-blue-50"
+                    ? "text-blue-600 bg-blue-50 font-semibold"
                     : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
                 }`}
               >
@@ -109,9 +123,9 @@ const AppNavbar = () => {
               </Link>
               <Link
                 href="/magazines"
-                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all rounded-lg ${
+                className={`flex items-center gap-1.5 px-3 lg:px-4 py-2 text-sm font-medium transition-all rounded-lg ${
                   pathname === "/magazines"
-                    ? "text-blue-600 bg-blue-50"
+                    ? "text-blue-600 bg-blue-50 font-semibold"
                     : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
                 }`}
               >
@@ -120,18 +134,20 @@ const AppNavbar = () => {
               </Link>
             </div>
 
-            {/* Desktop Account Section */}
-            <div className="hidden md:block">
-              <NavbarDesktopAccount logoutUser={logoutUser} />
-            </div>
+            {/* Desktop Account Section & Mobile Menu Button */}
+            <div className="flex items-center flex-1 justify-end">
+              <div className="hidden md:block">
+                <NavbarDesktopAccount logoutUser={logoutUser} />
+              </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="p-2 md:hidden"
-              onClick={() => setMobileNavOpen(!isMobileNavOpen)}
-            >
-              <Menu size={24} className="text-gray-600" />
-            </button>
+              {/* Mobile Menu Button */}
+              <button
+                className="p-2 md:hidden"
+                onClick={() => setMobileNavOpen(!isMobileNavOpen)}
+              >
+                <Menu size={24} className="text-gray-600" />
+              </button>
+            </div>
           </div>
         </div>
       </nav>

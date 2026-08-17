@@ -2,7 +2,7 @@ import { NAVBAR_LINKS } from "@/constants/navbarItems";
 import { Menu } from "antd";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { Home, Calendar, Users, BookOpen } from "lucide-react";
+import { Home, Calendar, Users, BookOpen, Rocket } from "lucide-react";
 
 const getIcon = (href) => {
   switch (href) {
@@ -10,6 +10,8 @@ const getIcon = (href) => {
       return <Home size={16} className="mr-1.5" />;
     case "/events":
       return <Calendar size={16} className="mr-1.5" />;
+    case "/sih":
+      return <Rocket size={16} className="mr-1.5" />;
     case "/teams":
       return <Users size={16} className="mr-1.5" />;
     case "/magazines":

@@ -6,6 +6,7 @@ import {
   User,
   QrCode,
   UserCog,
+  Rocket,
 } from "lucide-react";
 import { ROLES } from "./roles";
 import Link from "next/link";
@@ -20,6 +21,11 @@ export const NAVBAR_LINKS = [
     key: "/events",
     icon: <Trophy size={20} />,
     label: <Link href="/events">Events</Link>,
+  },
+  {
+    key: "/sih",
+    icon: <Rocket size={20} />,
+    label: <Link href="/sih">SIH Registration</Link>,
   },
   {
     key: "/teams",
