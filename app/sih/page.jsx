@@ -9,11 +9,13 @@ export default function SihRegistrationPage() {
 
   const rawFormUrl =
     process.env.NEXT_PUBLIC_SIH_GOOGLE_FORM_URL ||
-    "https://docs.google.com/forms/d/e/1FAIpQLSevhpN4P6tX95mqtwhtnp3gVam1MORXdZ2z2ua03oP8oa7gVg/viewform?usp=header";
+    "https://forms.gle/6viBd9Syg7VLCUK68";
 
   // Ensure iframe URL has embedded=true if it's a google form link
   const embedFormUrl = rawFormUrl.includes("viewform")
     ? rawFormUrl.replace(/viewform(\?.*)?$/, "viewform?embedded=true")
+    : rawFormUrl.includes("forms.gle/6viBd9Syg7VLCUK68")
+    ? "https://docs.google.com/forms/d/e/1FAIpQLSemckbnDDuMRWZCNSYBlQr85ovz3PV5TiUD97HrU_HGVhHGFA/viewform?embedded=true"
     : rawFormUrl;
 
   return (
