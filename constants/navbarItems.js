@@ -25,7 +25,7 @@ export const NAVBAR_LINKS = [
   {
     key: "/sih",
     icon: <Rocket size={20} />,
-    label: <Link href="/sih">SIH Registration</Link>,
+    label: <Link href="/sih">SIH Results</Link>,
   },
   {
     key: "/teams",

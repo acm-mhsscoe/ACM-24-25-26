@@ -1,137 +1,250 @@
 "use client";
 
-import React, { useState } from "react";
-import { ExternalLink, Rocket, AlertCircle, RefreshCw, AlertTriangle, ShieldAlert } from "lucide-react";
+import React, { useState, useMemo } from "react";
+import { motion } from "framer-motion";
+import { Search, X, Code2, Cpu, Download, FileText } from "lucide-react";
+import { SIH_RESULTS_DATA } from "@/constants/sihData";
 
-export default function SihRegistrationPage() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [iframeError, setIframeError] = useState(false);
+export default function SihResultsPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("All");
 
-  const rawFormUrl =
-    process.env.NEXT_PUBLIC_SIH_GOOGLE_FORM_URL ||
-    "https://forms.gle/6viBd9Syg7VLCUK68";
+  const filteredTeams = useMemo(() => {
+    return SIH_RESULTS_DATA.filter((team) => {
+      if (categoryFilter !== "All" && team.category !== categoryFilter) {
+        return false;
+      }
+      if (searchQuery.trim() !== "") {
+        const query = searchQuery.toLowerCase().trim();
+        const matchesName = team.teamName.toLowerCase().includes(query);
+        const matchesLeader = team.leaderName.toLowerCase().includes(query);
+        const matchesBranch = team.branch.toLowerCase().includes(query);
+        const matchesPsId = team.psId.toLowerCase().includes(query);
+        const matchesOrg = team.hostOrg.toLowerCase().includes(query);
+        const matchesPs = team.problemStatement.toLowerCase().includes(query);
+        const matchesMentor = team.mentor.toLowerCase().includes(query);
 
-  // Ensure iframe URL has embedded=true if it's a google form link
-  const embedFormUrl = rawFormUrl.includes("viewform")
-    ? rawFormUrl.replace(/viewform(\?.*)?$/, "viewform?embedded=true")
-    : rawFormUrl.includes("forms.gle/6viBd9Syg7VLCUK68")
-    ? "https://docs.google.com/forms/d/e/1FAIpQLSemckbnDDuMRWZCNSYBlQr85ovz3PV5TiUD97HrU_HGVhHGFA/viewform?embedded=true"
-    : rawFormUrl;
+        if (
+          !matchesName &&
+          !matchesLeader &&
+          !matchesBranch &&
+          !matchesPsId &&
+          !matchesOrg &&
+          !matchesPs &&
+          !matchesMentor
+        ) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }, [categoryFilter, searchQuery]);
 
   return (
-    <main className="min-h-screen pt-24 pb-16 bg-gradient-to-b from-gray-50 via-blue-50/30 to-white">
-      <div className="container px-4 mx-auto max-w-5xl">
-        {/* Header Banner */}
-        <div className="p-8 mb-6 text-center bg-white rounded-3xl border border-gray-100 shadow-xl shadow-blue-500/5 backdrop-blur-xl">
-          <h1 className="mb-3 text-3xl font-extrabold text-gray-900 md:text-5xl">
-            Internal SIH <span className="text-blue-600">Registration</span>
+    <div className="relative min-h-screen pt-24 pb-20 overflow-hidden bg-gray-50/50">
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url("/images/grid.svg")',
+            backgroundSize: "30px 30px",
+            opacity: "0.5",
+          }}
+        />
+      </div>
+
+      <div className="container relative z-10 px-4 mx-auto max-w-5xl">
+        {/* Clean Hero Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="mb-8 text-center"
+        >
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-3 text-xs font-semibold text-rose-600 bg-rose-50 border border-rose-200/80 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
+            Registration Closed
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+            Internal SIH <span className="text-[#007bff]">Results</span>
           </h1>
 
-          <p className="mx-auto max-w-2xl text-base text-gray-600 md:text-lg">
-            Internal Smart India Hackathon registration for MHSSCE students.
-            Fill out the form below with your team details to participate.
+          <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-gray-600 leading-relaxed">
+            🎉 Congratulations to all the shortlisted teams selected from the internal round to represent <span className="font-semibold text-gray-900">MHSSCE</span> at the National Stage of Smart India Hackathon! 🚀
           </p>
 
-          {/* Quick Action Button */}
-          <div className="flex flex-wrap gap-4 justify-center items-center mt-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-3 text-xs text-gray-500">
+            <span>ACM Chairperson: <strong className="text-gray-700">Siddiqui Tabish Javed</strong></span>
+            <span>•</span>
+            <span>Faculty Convenor: <strong className="text-gray-700">Dr. Zainab Mirza</strong></span>
+          </div>
+
+          {/* Quick Action Button in Header */}
+          <div className="mt-5 flex justify-center">
             <a
-              href={rawFormUrl}
+              href="/sih-results.pdf"
+              download="Internal-Smart-India-Hackathon-Result.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex gap-2 items-center px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-200 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/35 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-[#007bff] hover:bg-blue-700 rounded-xl transition-all shadow-sm hover:shadow active:scale-95 cursor-pointer"
             >
-              <ExternalLink size={16} />
-              <span>Open Form in New Tab</span>
+              <Download size={15} />
+              <span>Download Official Result PDF</span>
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        {/* College Domain Email Requirement Warning Box */}
-        <div className="p-5 mb-8 bg-amber-50/90 rounded-2xl border border-amber-200/80 shadow-sm flex items-start gap-4">
-          <div className="p-2.5 bg-amber-100 rounded-xl text-amber-700 flex-shrink-0 mt-0.5">
-            <AlertTriangle size={22} />
-          </div>
-          <div className="text-left flex-1">
-            <h3 className="text-base font-bold text-amber-900 flex items-center gap-2">
-              <span>MHSSCE Email Login Required</span>
-            </h3>
-            <p className="mt-1 text-sm text-amber-800 leading-relaxed">
-              Please make sure you are signed into Google with your official college domain email address (<span className="font-semibold underline decoration-amber-400">@mhssce.ac.in</span>) in your browser. Otherwise, the form below will display a <span className="font-semibold">&quot;You need permission&quot;</span> message.
-            </p>
-          </div>
-        </div>
-
-        {/* Embedded Form Container */}
-        <div className="relative overflow-hidden bg-white rounded-3xl border border-gray-200/80 shadow-2xl shadow-gray-200/50">
-          {/* Top Bar inside iframe box */}
-          <div className="flex justify-between items-center px-6 py-4 bg-gray-50/80 border-b border-gray-100 backdrop-blur-sm">
-            <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
-              <Rocket size={18} className="text-blue-600" />
-              <span>Official SIH Registration Form</span>
-            </div>
-            <button
-              onClick={() => {
-                setIsLoading(true);
-                setIframeError(false);
-              }}
-              className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-blue-600 transition-colors"
-              title="Reload Form"
-            >
-              <RefreshCw size={14} className={isLoading ? "animate-spin" : ""} />
-              <span>Refresh</span>
-            </button>
-          </div>
-
-          {/* Loading Indicator */}
-          {isLoading && (
-            <div className="flex flex-col justify-center items-center py-24 min-h-[600px] bg-white">
-              <div className="mb-4 w-12 h-12 rounded-full border-4 border-blue-200 animate-spin border-t-blue-600" />
-              <p className="text-sm font-medium text-gray-600">
-                Loading SIH Registration Form...
-              </p>
-            </div>
-          )}
-
-          {/* Error / Fallback State */}
-          {iframeError && (
-            <div className="flex flex-col justify-center items-center p-8 text-center min-h-[400px]">
-              <AlertCircle size={48} className="mb-4 text-amber-500" />
-              <h3 className="mb-2 text-xl font-bold text-gray-900">
-                Form display issue?
-              </h3>
-              <p className="mb-6 max-w-md text-sm text-gray-600">
-                If the Google Form does not load directly inside this frame,
-                you can open it in a new window to submit your responses smoothly.
-              </p>
-              <a
-                href={rawFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex gap-2 items-center px-6 py-3 font-medium text-white bg-blue-600 rounded-xl shadow-md hover:bg-blue-700 transition-all"
+        {/* Results Table Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="bg-white rounded-2xl border border-gray-200/80 shadow-sm overflow-hidden"
+        >
+          {/* Controls Bar */}
+          <div className="p-4 sm:p-5 bg-white border-b border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+            {/* Category Filter Pills */}
+            <div className="flex items-center gap-1.5 w-full sm:w-auto bg-gray-100/80 p-1 rounded-xl">
+              <button
+                onClick={() => setCategoryFilter("All")}
+                className={`flex-1 sm:flex-none px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  categoryFilter === "All"
+                    ? "bg-white text-gray-900 shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
               >
-                <ExternalLink size={16} />
-                <span>Open Google Form</span>
-              </a>
+                All Teams
+              </button>
+              <button
+                onClick={() => setCategoryFilter("Software")}
+                className={`flex-1 sm:flex-none inline-flex items-center justify-center gap-1 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  categoryFilter === "Software"
+                    ? "bg-white text-[#007bff] shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                <Code2 size={13} />
+                Software
+              </button>
+              <button
+                onClick={() => setCategoryFilter("Hardware")}
+                className={`flex-1 sm:flex-none inline-flex items-center justify-center gap-1 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  categoryFilter === "Hardware"
+                    ? "bg-white text-purple-600 shadow-sm"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                <Cpu size={13} />
+                Hardware
+              </button>
             </div>
-          )}
 
-          {/* Embedded Google Form Iframe */}
-          <iframe
-            src={embedFormUrl}
-            className={`w-full min-h-[850px] border-none transition-opacity duration-300 ${
-              isLoading ? "opacity-0 absolute" : "opacity-100"
-            }`}
-            onLoad={() => setIsLoading(false)}
-            onError={() => {
-              setIsLoading(false);
-              setIframeError(true);
-            }}
-            title="Smart India Hackathon Registration Form"
-          >
-            Loading...
-          </iframe>
-        </div>
+            {/* Search Input */}
+            <div className="relative w-full sm:w-64">
+              <Search
+                size={15}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+              />
+              <input
+                type="text"
+                placeholder="Search team, leader, branch..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-8 pr-7 py-1.5 text-xs sm:text-sm bg-gray-50 text-gray-900 rounded-xl border border-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#007bff]/20 focus:border-[#007bff] transition-all"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 p-0.5 cursor-pointer"
+                >
+                  <X size={13} />
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Table */}
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-gray-50/60 border-b border-gray-100 text-[11px] font-bold text-gray-500 uppercase tracking-wider">
+                <tr>
+                  <th className="py-3 px-4 w-14 text-center">Sr. No.</th>
+                  <th className="py-3 px-5">Team Name</th>
+                  <th className="py-3 px-4">Category</th>
+                  <th className="py-3 px-5">Team Leader</th>
+                  <th className="py-3 px-5">Branch</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100 bg-white text-xs sm:text-sm">
+                {filteredTeams.length > 0 ? (
+                  filteredTeams.map((team) => (
+                    <tr
+                      key={team.srNo}
+                      className="hover:bg-blue-50/30 transition-colors"
+                    >
+                      {/* Sr. No. */}
+                      <td className="py-3 px-4 text-center text-xs font-semibold text-gray-400">
+                        {team.srNo}
+                      </td>
+
+                      {/* Team Name */}
+                      <td className="py-3 px-5">
+                        <div className="font-bold text-gray-900">
+                          {team.teamName}
+                        </div>
+                        <div className="text-[11px] text-gray-500 mt-0.5 line-clamp-1">
+                          <span className="font-medium text-[#007bff]">{team.psId}</span> • {team.hostOrg}
+                        </div>
+                      </td>
+
+                      {/* Category */}
+                      <td className="py-3 px-4">
+                        <span
+                          className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold ${
+                            team.category === "Hardware"
+                              ? "bg-purple-50 text-purple-700 border border-purple-200/80"
+                              : "bg-blue-50 text-[#007bff] border border-blue-200/80"
+                          }`}
+                        >
+                          {team.category === "Hardware" ? (
+                            <Cpu size={11} />
+                          ) : (
+                            <Code2 size={11} />
+                          )}
+                          {team.category}
+                        </span>
+                      </td>
+
+                      {/* Leader Name */}
+                      <td className="py-3 px-5">
+                        <div className="font-semibold text-gray-900">
+                          {team.leaderName}
+                        </div>
+                        <div className="text-[11px] text-gray-500 font-mono">
+                          {team.rollNo}
+                        </div>
+                      </td>
+
+                      {/* Branch */}
+                      <td className="py-3 px-5 text-xs text-gray-600 font-medium">
+                        {team.branch}
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={5} className="py-12 text-center text-xs sm:text-sm text-gray-500">
+                      No team found matching &ldquo;{searchQuery}&rdquo;
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
       </div>
-    </main>
+    </div>
   );
 }
