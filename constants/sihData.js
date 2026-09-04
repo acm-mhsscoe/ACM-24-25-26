@@ -1,7 +1,7 @@
-// Official Shortlisted Teams from Internal Smart India Hackathon Results PDF
+// Official Confirmed & Waiting List Teams from ISIH Results PDF
 // M. H. Saboo Siddik College of Engineering - ACM Student Chapter
 
-export const SIH_RESULTS_DATA = [
+export const SIH_CONFIRMED_DATA = [
   {
     srNo: 1,
     teamName: "HackHive",
@@ -14,6 +14,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241732",
     email: "faizan.241732.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 2,
@@ -27,6 +28,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241804",
     email: "shamim.241804.ci@mhssce.ac.in",
     branch: "Computer Science & Engineering (IoT)",
+    status: "Confirmed",
   },
   {
     srNo: 3,
@@ -40,6 +42,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "252468",
     email: "simra.252668.it@mhssce.ac.in",
     branch: "Information Technology",
+    status: "Confirmed",
   },
   {
     srNo: 4,
@@ -53,6 +56,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231401",
     email: "abizer.231401.it@mhssce.ac.in",
     branch: "Information Technology",
+    status: "Confirmed",
   },
   {
     srNo: 5,
@@ -66,6 +70,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241624",
     email: "moinuddin.241624.et@mhssce.ac.in",
     branch: "Electronics & Telecommunication Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 6,
@@ -79,6 +84,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231703",
     email: "abdullah.231703.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 7,
@@ -92,6 +98,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231751",
     email: "aasim.231751.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 8,
@@ -105,6 +112,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231747",
     email: "eshaan.231747.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 9,
@@ -118,6 +126,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231629",
     email: "farukh.231629.et@mhssce.ac.in",
     branch: "Electronics & Telecommunication Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 10,
@@ -131,6 +140,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "251305",
     email: "fahd.251305.co@mhssce.ac.in",
     branch: "Computer Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 11,
@@ -144,6 +154,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241829",
     email: "amin.241829.ci@mhssce.ac.in",
     branch: "Computer Science & Engineering (IoT)",
+    status: "Confirmed",
   },
   {
     srNo: 12,
@@ -157,6 +168,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231453",
     email: "aariz.231453.it@mhssce.ac.in",
     branch: "Information Technology",
+    status: "Confirmed",
   },
   {
     srNo: 13,
@@ -170,6 +182,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "251409",
     email: "ayman.251409.it@mhssce.ac.in",
     branch: "Information Technology",
+    status: "Confirmed",
   },
   {
     srNo: 14,
@@ -183,6 +196,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241741",
     email: "azib.241741.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 15,
@@ -196,6 +210,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241206",
     email: "azhad.241206.co@mhssce.ac.in",
     branch: "Computer Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 16,
@@ -209,6 +224,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231456",
     email: "tabish.231456.it@mhssce.ac.in",
     branch: "Information Technology",
+    status: "Confirmed",
   },
   {
     srNo: 17,
@@ -222,6 +238,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "251316",
     email: "rehan.251316.co@mhssce.ac.in",
     branch: "Computer Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 18,
@@ -235,6 +252,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231439",
     email: "wahid.231439.it@mhssce.ac.in",
     branch: "Information Technology",
+    status: "Confirmed",
   },
   {
     srNo: 19,
@@ -248,6 +266,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231445",
     email: "shadab.231445.it@mhssce.ac.in",
     branch: "Information Technology",
+    status: "Confirmed",
   },
   {
     srNo: 20,
@@ -261,6 +280,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231718",
     email: "arif.231718.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 21,
@@ -274,6 +294,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "251521",
     email: "afsheen.251521.et@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 22,
@@ -287,6 +308,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241836",
     email: "abuzar.241836.ci@mhssce.ac.in",
     branch: "Computer Science & Engineering (IoT)",
+    status: "Confirmed",
   },
   {
     srNo: 23,
@@ -300,6 +322,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241301",
     email: "dhanraj.241301.ae@mhssce.ac.in",
     branch: "Mechanical Engineering Automobile",
+    status: "Confirmed",
   },
   {
     srNo: 24,
@@ -313,6 +336,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231211",
     email: "hannan.231211.co@mhssce.ac.in",
     branch: "Computer Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 25,
@@ -326,6 +350,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241812",
     email: "annam.241812.ci@mhssce.ac.in",
     branch: "Computer Science & Engineering (IoT)",
+    status: "Confirmed",
   },
   {
     srNo: 26,
@@ -339,6 +364,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241459",
     email: "shifa.241459.it@mhssce.ac.in",
     branch: "Information Technology",
+    status: "Confirmed",
   },
   {
     srNo: 27,
@@ -352,6 +378,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231703",
     email: "abdullah.231703.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 28,
@@ -365,6 +392,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241723",
     email: "anasraza.241723.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 29,
@@ -378,6 +406,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241242",
     email: "shujaat.241242.co@mhssce.ac.in",
     branch: "Computer Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 30,
@@ -391,6 +420,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241208",
     email: "huzefa.241208.co@mhssce.ac.in",
     branch: "Computer Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 31,
@@ -404,6 +434,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "242776",
     email: "ummehani.242776.aiml@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 32,
@@ -417,6 +448,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "241257",
     email: "hammad.241257.co@mhssce.ac.in",
     branch: "Computer Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 33,
@@ -430,6 +462,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "251916",
     email: "ruman.251916.ci@mhssce.ac.in",
     branch: "Computer Science & Engineering (IoT)",
+    status: "Confirmed",
   },
   {
     srNo: 34,
@@ -443,6 +476,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231706",
     email: "rayyan.231706.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 35,
@@ -456,6 +490,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "251440",
     email: "fatma.251440.it@mhssce.ac.in",
     branch: "Information Technology",
+    status: "Confirmed",
   },
   {
     srNo: 36,
@@ -469,6 +504,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "251734",
     email: "ayesha.251734.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 37,
@@ -482,6 +518,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231244",
     email: "shaan.231244.co@mhssce.ac.in",
     branch: "Computer Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 38,
@@ -495,6 +532,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231808",
     email: "asad.231808.ci@mhssce.ac.in",
     branch: "Computer Science & Engineering (IoT)",
+    status: "Confirmed",
   },
   {
     srNo: 39,
@@ -508,6 +546,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "231742",
     email: "alfiya.231742.cs@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
   },
   {
     srNo: 40,
@@ -521,6 +560,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "242665",
     email: "ayesha.242665.et@mhssce.ac.in",
     branch: "Electronics & Telecommunication Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 41,
@@ -534,6 +574,7 @@ export const SIH_RESULTS_DATA = [
     rollNo: "251230",
     email: "zoya.251230.co@mhssce.ac.in",
     branch: "Computer Engineering",
+    status: "Confirmed",
   },
   {
     srNo: 42,
@@ -547,8 +588,126 @@ export const SIH_RESULTS_DATA = [
     rollNo: "242774",
     email: "affan.242774.aiml@mhssce.ac.in",
     branch: "Computer Science & Engineering (AIML)",
+    status: "Confirmed",
+  },
+  {
+    srNo: 43,
+    teamName: "FrontierX6",
+    mentor: "Asst. Prof. Ahlam Ansari",
+    category: "Software",
+    psId: "SIH26032",
+    hostOrg: "Ministry of Consumer Affairs, Food & Public Distribution",
+    problemStatement: "Farmers often face long waiting times, lack of information regarding procurement schedules, and uncertainty about procurement status.",
+    leaderName: "Nusaybah Kazi",
+    rollNo: "231215",
+    email: "nusaybah.231215.co@mhssce.ac.in",
+    branch: "Computer Engineering",
+    status: "Confirmed",
+  },
+  {
+    srNo: 44,
+    teamName: "GOD'S PLAN",
+    mentor: "Dr. Chaitali Mahajan & Er. Awij Alam",
+    category: "Hardware",
+    psId: "SIH26039",
+    hostOrg: "Government of Jharkhand",
+    problemStatement: "AI-Powered Underground Mine Safety, Monitoring and Rescue System.",
+    leaderName: "Khan Moinuddin Jamal Ahmed",
+    rollNo: "241624",
+    email: "moinuddin.241624.et@mhssce.ac.in",
+    branch: "Electronics & Telecommunication Engineering",
+    status: "Confirmed",
+  },
+  {
+    srNo: 45,
+    teamName: "Team Precognix",
+    mentor: "Dr. Ashfaq Sir",
+    category: "Software",
+    psId: "SIH26153",
+    hostOrg: "National Technical Research Organisation (NTRO)",
+    problemStatement: "AI based network attack forecasting from network traffic data",
+    leaderName: "IFFAT ANEES ANSARI",
+    rollNo: "231404",
+    email: "iffat.231404.it@mhssce.ac.in",
+    branch: "Information Technology",
+    status: "Confirmed",
   },
 ];
 
-// Helper list of just team names for simple usage if needed
-export const SIH_TEAM_NAMES = SIH_RESULTS_DATA.map((t) => t.teamName);
+export const SIH_WAITING_DATA = [
+  {
+    srNo: 1,
+    teamName: "Jonaki",
+    mentor: "Dr. Chaitali Mahajan",
+    category: "Software",
+    psId: "SIH26003",
+    hostOrg: "Ministry of Development of North Eastern Region (MDoNER)",
+    problemStatement: "AI-Based Cognitive Gaming and Memory Assistance Platform for Elderly Dementia Patients in North Eastern Region (NER)",
+    leaderName: "Hajra Khan",
+    rollNo: "252764",
+    email: "hajra.252764.cs@mhssce.ac.in",
+    branch: "Computer Science & Engineering (AIML)",
+    status: "Waiting List",
+  },
+  {
+    srNo: 2,
+    teamName: "CtrlAltEcho",
+    mentor: "Dr. Ashfaq Shaikh",
+    category: "Software",
+    psId: "SIH26104",
+    hostOrg: "All India Council for Technical Education (AICTE)",
+    problemStatement: "AI-Powered Real-Time Detection and Prevention of Voice Cloning Impersonation Attacks",
+    leaderName: "Khomosi Yusuf Murtuza",
+    rollNo: "241231",
+    email: "yusuf.241231.co@mhssce.ac.in",
+    branch: "Computer Engineering",
+    status: "Waiting List",
+  },
+  {
+    srNo: 3,
+    teamName: "KisanCore",
+    mentor: "Awij shaikh",
+    category: "Hardware",
+    psId: "SIH26005",
+    hostOrg: "Ministry of Development of North Eastern Region (MDoNER)",
+    problemStatement: "Solar-Powered Smart Mini Cold Storage System for Fresh Vegetables in North Eastern Region (NER)",
+    leaderName: "Sayyed Mohammed Abbas",
+    rollNo: "241644",
+    email: "abbas.241644.et@mhssce.ac.in",
+    branch: "Electronics & Telecommunication Engineering",
+    status: "Waiting List",
+  },
+  {
+    srNo: 4,
+    teamName: "Pluto",
+    mentor: "Farhana Siddiqui",
+    category: "Software",
+    psId: "SIH26132",
+    hostOrg: "Government of Maharashtra",
+    problemStatement: "Strengthening market linkages and price discovery for farmers",
+    leaderName: "Gargi Unhalekar",
+    rollNo: "241261",
+    email: "gargi.241261.co@mhssce.ac.in",
+    branch: "Computer Engineering",
+    status: "Waiting List",
+  },
+  {
+    srNo: 5,
+    teamName: "CareForge",
+    mentor: "Fardeen Sheikh",
+    category: "Software",
+    psId: "SIH2607",
+    hostOrg: "Ministry of Ayush",
+    problemStatement: "Patient Case-Taking Software",
+    leaderName: "Prem Pagar",
+    rollNo: "251928",
+    email: "prem.251928.ci@mhssce.ac.in",
+    branch: "Computer Science & Engineering (IoT)",
+    status: "Waiting List",
+  },
+];
+
+export const SIH_ALL_RESULTS = [
+  ...SIH_CONFIRMED_DATA,
+  ...SIH_WAITING_DATA,
+];
