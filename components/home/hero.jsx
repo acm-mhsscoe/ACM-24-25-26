@@ -83,7 +83,7 @@ export default function HeroSection() {
             M.H. Saboo Siddik College of Engineering
           </p>
           <p className="mt-1 text-lg font-bold tracking-widest text-blue-500/90">
-            2025-2026
+            2026-2027
           </p>
         </motion.div>
 
@@ -121,7 +121,8 @@ export default function HeroSection() {
         {/* CTA Buttons */}
         <motion.div className="flex flex-wrap gap-5 justify-center items-center mt-8" initial="hidden" animate="visible" variants={buttonContainer}>
           <motion.div variants={buttonItem} whileHover={buttonHover.whileHover}>
-            <a href="https://forms.gle/ZUgCoh3vRf1tg5NR8" target="_blank" rel="noopener noreferrer">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScTmV8V0-UO1pXPva5ach7rDK5EmogNIjy3zA9f4X4o-3Jsfw/viewform?usp=publish-editor
+" target="_blank" rel="noopener noreferrer">
               <button className="flex items-center gap-3 px-8 py-4 text-base font-bold text-white transition-all bg-[#007bff] rounded-xl shadow-lg hover:bg-blue-600 hover:shadow-xl hover:scale-105 focus:ring-2 focus:ring-blue-500/50 group">
                 <Users className="transition-transform group-hover:scale-110" size={20} strokeWidth={2} />
                 <span className="relative">
